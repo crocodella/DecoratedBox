@@ -23,7 +23,7 @@
         
         cellSize = [self.textureAtlas.texture contentSize].width / 3;
         
-        self.anchorPoint = ccp(0.5, 0.5);
+        self.anchorPoint = ccp(0.5f, 0.5f);
         
         [self resizeToWidth:w height:h];        
     }
@@ -37,8 +37,8 @@
     boxWidth = w;
     boxHeight = h;
     
-    int uw = floor(w / cellSize);
-    int uh = floor(h / cellSize);
+    int uw = floorf(w / cellSize);
+    int uh = floorf(h / cellSize);
     
     self.contentSize = CGSizeMake(uw * cellSize, uh * cellSize);
     
