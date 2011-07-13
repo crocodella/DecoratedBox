@@ -41,12 +41,12 @@
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
         
-        DecoratedBox *box = [DecoratedBox decoratedBoxWithFile:@"box.png" width:300 height:128];
-        box.position = ccp( size.width /2 , size.height/2 );
+        DecoratedBox *box = [DecoratedBox decoratedBoxWithFile:@"box.png" width:96 height:96];
+        box.position = ccp( size.width * 0.5f , size.height * 0.5f );
         [self addChild:box];
         
-        DecoratedBox *box2 = [DecoratedBox decoratedBoxWithFile:@"box.png" width:128 height:256];
-        box2.position = ccp( 300 , 200 );
+        DecoratedBox *box2 = [DecoratedBox decoratedBoxWithFile:@"box.png" width:160 height:288];
+        box2.position = ccp( 0 , 0 );
         [self addChild:box2];
 	}
 	return self;
