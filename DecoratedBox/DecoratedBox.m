@@ -22,9 +22,7 @@
     if ((self = [super initWithFile:filename capacity:9])) {
         
         cellSize = [self.textureAtlas.texture contentSize].width / 3;
-        
-        self.anchorPoint = ccp(0.5, 0.5);
-        
+        anchorPoint_ = ccp(0.5f,0.5f);
         [self resizeToWidth:w height:h];        
     }
     return self;
@@ -37,8 +35,8 @@
     boxWidth = w;
     boxHeight = h;
     
-    int uw = floor(w / cellSize);
-    int uh = floor(h / cellSize);
+    int uw = floorf(w / cellSize);
+    int uh = floorf(h / cellSize);
     
     self.contentSize = CGSizeMake(uw * cellSize, uh * cellSize);
     
@@ -91,6 +89,7 @@
             }
             
             CCSprite *b = [CCSprite spriteWithBatchNode:self rect:rect];
+            b.anchorPoint = CGPointZero;
             b.position = ccp(i * cellSize, j * cellSize);
             b.tag = j * cellSize + i;
             
